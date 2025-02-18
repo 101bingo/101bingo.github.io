@@ -2,52 +2,52 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>/pt-br/categories/</loc>
+    <loc>https://101bingo.github.io/pt-br/categories/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/categories/"
+                href="https://101bingo.github.io/categories/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="pt-br"
-                href="/pt-br/categories/"
+                href="https://101bingo.github.io/pt-br/categories/"
                 />
   </url><url>
-    <loc>/pt-br/</loc>
+    <loc>https://101bingo.github.io/pt-br/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/"
+                href="https://101bingo.github.io/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="pt-br"
-                href="/pt-br/"
+                href="https://101bingo.github.io/pt-br/"
                 />
   </url><url>
-    <loc>/pt-br/series/</loc>
+    <loc>https://101bingo.github.io/pt-br/series/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/series/"
+                href="https://101bingo.github.io/series/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="pt-br"
-                href="/pt-br/series/"
+                href="https://101bingo.github.io/pt-br/series/"
                 />
   </url><url>
-    <loc>/pt-br/tags/</loc>
+    <loc>https://101bingo.github.io/pt-br/tags/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/tags/"
+                href="https://101bingo.github.io/tags/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="pt-br"
-                href="/pt-br/tags/"
+                href="https://101bingo.github.io/pt-br/tags/"
                 />
   </url>
 </urlset>
