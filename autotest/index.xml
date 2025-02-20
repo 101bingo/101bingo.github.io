@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>AutoTests on heyo</title>
+    <link>https://101bingo.github.io/autotest/</link>
+    <description>Recent content in AutoTests on heyo</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 19 Feb 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://101bingo.github.io/autotest/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>android设备的UI自动化测试</title>
+      <link>https://101bingo.github.io/autotest/android%E8%AE%BE%E5%A4%87%E7%9A%84ui%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95/</link>
+      <pubDate>Wed, 19 Feb 2025 00:00:00 +0000</pubDate>
+      <guid>https://101bingo.github.io/autotest/android%E8%AE%BE%E5%A4%87%E7%9A%84ui%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95/</guid>
+      <description>&lt;h3 id=&#34;配置adb环境&#34;&gt;配置adb环境&lt;/h3&gt;&#xA;&lt;p&gt;adb全称为Android Debug Bridge，是一个debug工具。&lt;br&gt;&#xA;Android的UI自动化依赖adb，所以先配置好adb环境，在官网下载&#xA;配置环境变量，在&lt;strong&gt;path&lt;/strong&gt;中添加adb文件的路径&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
