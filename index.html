@@ -196,11 +196,11 @@
             
             <div class="post-text grow">
                 <div class="post-title">
-                    <h5><a href=/autotest/android%E8%AE%BE%E5%A4%87%E7%9A%84ui%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95/>android设备的UI自动化测试</a></h5>
+                    <h5><a href=/post/hugo&#43;github-page%E4%B8%AA%E4%BA%BA%E5%BE%AE%E5%8D%9A%E6%90%AD%E5%BB%BA/>hugo&#43;github page个人微博搭建</a></h5>
                 </div>
                 <div class="post-header">
     <div style="padding-top: 5px;">
-        <i class="far fa-calendar"></i><span class="date">Feb 19, 2025</span>
+        <i class="far fa-calendar"></i><span class="date">Feb 18, 2025</span>
         <i class="far fa-clock"></i><span class="reading-time">One minute</span>
         
         
@@ -225,10 +225,154 @@
                     <div class="p_part">
                         
                         
-                            <p><h3 id="配置adb环境">配置adb环境</h3>
-<p>adb全称为Android Debug Bridge，是一个debug工具。<br>
-Android的UI自动化依赖adb，所以先配置好adb环境，在官网下载
-配置环境变量，在<strong>path</strong>中添加adb文件的路径</p></p>
+                            <p><h3 id="hugo安装">hugo安装</h3>
+<h4 id="1安装hugo">1.安装hugo</h4>
+<p>从官网下载最新<a href="https://github.com/gohugoio/hugo/releases/latest">hugo最新版本</a><br>
+window使用<strong>Chocolatey</strong>安装hugo扩展版本：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>choco install hugo-extended
+</span></span></code></pre></div><p><strong>配置环境变量</strong>
+其他必备安装：</p>
+<ul>
+<li>安装git</li>
+<li>安装golang</li>
+</ul>
+<h3 id="hugo新建站点">hugo新建站点</h3>
+<p>在目录下，通过命令新建：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>hugo new site sitename
+</span></span></code></pre></div><h3 id="hugo主题安装">hugo主题安装</h3>
+<p>hugo官网提供了主题下载，<a href="https://themes.gohugo.io/">hugo主题下载</a><br>
+我这里选择的是heyo主题，进到官网heyo主题详情页，根据提示下载主题到本地：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">cd</span> hugo站点项目根目录
+</span></span><span style="display:flex;"><span>git clone https://github.com/LucasVadilho/heyo-hugo-theme heyo
+</span></span><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">cd</span> heyo/exampleSite <span style="color:#ff79c6">&amp;&amp;</span> hugo server --themesDir ../..
+</span></span></code></pre></div><h3 id="部署到github">部署到github</h3>
+<pre><code>在github中可以通过pages来设置静态网页托管，具体设置如下：  
+</code></pre>
+<p><img src="images/githubPages/create_respository.png" alt="这是图片" title="name"><br>
+<strong>重要！将config.toml文件中的baseUrl值修改为yourname.github.io地址</strong><br>
+通过<strong>hugo</strong>命令来生成静态页面，这里可以在自定义文件夹内新建content和static目录用来存放博客文件和静态文件，可以通过 <strong>&ndash;themesDir path</strong> 参数来制定主体目录</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">cd</span> heyo/exampleSite
+</span></span><span style="display:flex;"><span>hugo --themesDir ../..
+</span></span></code></pre></div><p>此时，当前目录下会生成public文件夹，cd到public目录下，通过git上传文件：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">cd</span> public
+</span></span><span style="display:flex;"><span>git init    <span style="color:#6272a4">#初始化仓库</span>
+</span></span><span style="display:flex;"><span>git remote add origin https://github.com/101bingo/101bingo.github.io.git  <span style="color:#6272a4">#链接远程仓库</span>
+</span></span><span style="display:flex;"><span>git branch --set-upstream-to<span style="color:#ff79c6">=</span>origin/master master
+</span></span><span style="display:flex;"><span>git add .
+</span></span><span style="display:flex;"><span>git commit -m <span style="color:#f1fa8c">&#34;first commit&#34;</span>
+</span></span><span style="display:flex;"><span>git push -u origin master
+</span></span></code></pre></div><p>后续发布博客，先执行<strong>hugo &ndash;themesDir ../..</strong>，再到public目录下提交代码：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>git add .
+</span></span><span style="display:flex;"><span>git commit -m <span style="color:#f1fa8c">&#34;commit info&#34;</span>
+</span></span><span style="display:flex;"><span>git push
+</span></span></code></pre></div></p>
+                        
+                    </div>
+                </div>
+                <div class="post-footer">
+                    <div class="meta">
+                        <div class="info">
+                            <a class="category" href="/categories/%E8%87%AA%E5%8A%A8%E5%8C%96/">自动化</a>
+                            <a class="tag" href="/tags/%E5%8D%9A%E5%AE%A2/">博客</a><a class="tag" href="/tags/hugo/">hugo</a>
+                            
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        
+        <div class="post summary">
+            
+            <div class="post-text grow">
+                <div class="post-title">
+                    <h5><a href=/post/%E6%96%B0%E4%B8%80%E4%BB%A3web%E8%87%AA%E5%8A%A8%E5%8C%96%E5%88%A9%E5%99%A8--playwright/>新一代web自动化利器--playwright</a></h5>
+                </div>
+                <div class="post-header">
+    <div style="padding-top: 5px;">
+        <i class="far fa-calendar"></i><span class="date">Feb 14, 2025</span>
+        <i class="far fa-clock"></i><span class="reading-time">One minute</span>
+        
+        
+
+
+    
+
+    
+        
+
+        
+        
+            <span id="busuanzi_container_value_page_pv"><i class="far fa-eye fa-fw"></i>
+                
+                <span id="busuanzi_value_page_pv"></span>&nbsp;</span>
+        
+    
+
+</div>
+</div>
+                <div class="post-content">
+                    <div class="p_part">
+                        
+                        
+                            <p><h2 id="前言">前言</h2>
+<p>提到web端的UI自动化，我们常常想到的是<strong>selenium</strong>，而<strong>Playwright</strong>则是后起之秀，可为现代网络应用程序提供可靠的端到端测试，<a href="https://playwright.dev/python/">官网</a></p>
+<ul>
+<li><input checked="" disabled="" type="checkbox"> 跨平台：windows、macOS、linux</li>
+<li><input checked="" disabled="" type="checkbox"> 多编程语言：TypeScript, JavaScript, Python, .NET, Java.</li>
+<li><input checked="" disabled="" type="checkbox"> 移动端模拟</li>
+<li><input checked="" disabled="" type="checkbox"> 优秀的特性
+<ul>
+<li>自动等待</li>
+<li>测试隔离，浏览器上下文</li>
+</ul>
+</li>
+<li><input checked="" disabled="" type="checkbox"> 优秀的工具
+<ul>
+<li>脚本录制，<code>codegen</code></li>
+<li>跟踪查看器，<code>trace view</code></li>
+</ul>
+</li>
+</ul>
+<h2 id="安装">安装</h2>
+<ul>
+<li>安装playwright
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>pip install playwright
+</span></span></code></pre></div></li>
+<li>安装pytest插件
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>pip install pytest-playwright
+</span></span></code></pre></div></li>
+<li>安装浏览器驱动（自动安装）
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>playwright install
+</span></span></code></pre></div></li>
+</ul>
+<h2 id="使用">使用</h2>
+<h3 id="示例">示例</h3>
+<p>同步代码：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#ff79c6">from</span> playwright.sync_api <span style="color:#ff79c6">import</span> sync_playwright
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">with</span> sync_playwright() <span style="color:#ff79c6">as</span> p:
+</span></span><span style="display:flex;"><span>    browser <span style="color:#ff79c6">=</span> p<span style="color:#ff79c6">.</span>chromium<span style="color:#ff79c6">.</span>launch()
+</span></span><span style="display:flex;"><span>    page <span style="color:#ff79c6">=</span> browser<span style="color:#ff79c6">.</span>new_page()
+</span></span><span style="display:flex;"><span>    page<span style="color:#ff79c6">.</span>goto(<span style="color:#f1fa8c">&#34;http://playwright.dev&#34;</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#8be9fd;font-style:italic">print</span>(page<span style="color:#ff79c6">.</span>title())
+</span></span><span style="display:flex;"><span>    browser<span style="color:#ff79c6">.</span>close()
+</span></span></code></pre></div><p>异步代码：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#ff79c6">import</span> asyncio
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">from</span> playwright.async_api <span style="color:#ff79c6">import</span> async_playwright
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">async</span> <span style="color:#ff79c6">def</span> <span style="color:#50fa7b">main</span>():
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">async</span> <span style="color:#ff79c6">with</span> async_playwright() <span style="color:#ff79c6">as</span> p:
+</span></span><span style="display:flex;"><span>        browser <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">await</span> p<span style="color:#ff79c6">.</span>chromium<span style="color:#ff79c6">.</span>launch()
+</span></span><span style="display:flex;"><span>        page <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">await</span> browser<span style="color:#ff79c6">.</span>new_page()
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">await</span> page<span style="color:#ff79c6">.</span>goto(<span style="color:#f1fa8c">&#34;http://playwright.dev&#34;</span>)
+</span></span><span style="display:flex;"><span>        <span style="color:#8be9fd;font-style:italic">print</span>(<span style="color:#ff79c6">await</span> page<span style="color:#ff79c6">.</span>title())
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">await</span> browser<span style="color:#ff79c6">.</span>close()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>asyncio<span style="color:#ff79c6">.</span>run(main())
+</span></span></code></pre></div><h3 id="元素定位-todo">元素定位 TODO</h3></p>
                         
                     </div>
                 </div>
